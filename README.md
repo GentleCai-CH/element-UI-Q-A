@@ -1,21 +1,34 @@
 # element-UI 使用过程中遇到的问题 收集
 
 ## 💡 简介
-nebula（[ˈnebyələ]，n.星云）是一款现代化的知识社区项目，使用 Vue + NuxtJS + Element-UI 实现
-
-与 [forest](https://github.com/rymcu/forest) （[ˈfôrəst]，n.森林）一起食用，让我们一起探索知识社区的未来。
-
-## ⚡ 动机
-
-在 2019 年的某一天,受到 [Hugh](https://rymcu.com/user/Hugh) 的邀请, 构建一个开源嵌入式知识学习交流平台。因此就有了 nebula 这个项目。 nebula
-在很多方面受到了 [Symphony](https://github.com/88250/symphony) 的启发,并尝试着在 [Symphony](https://github.com/88250/symphony)
-和 [B3log 思想](https://ld246.com/article/1546941897596) 的基础上进一步探索。
-
+用于收集 使用element-UI过程中遇到的问题及解决方法，以提高开发效率。
 
 ## ✨ 特性
 
-- 内容编辑器
-  - Markdown（GFM）
+###  问题： <el-input>输入框 不能输入、删除等
+  
+#### 原因1：使用了 <el-link>
+  
+ <el-form-item>里面嵌入 <el-link>会导致 input输入框不能输入、删除
+   
+```html
+<el-form :model="user" ref="user" status-icon label-width="150px">
+        <el-form-item label="用户名" prop="account" :rules="rules.account">
+          <el-input  v-model='user.account' placeholder='请输入用户名，默认：gentle' autocomplete='off'></el-input >
+        </el-form-item>
+     
+        </el-form-item>
+        <!--
+          
+          <el-form-item>里面嵌入 <el-link>会导致 input输入框不能输入、删除
+
+          <el-ink rel="nofollow" style="float:right" :underline="false" @click="forget">忘记密码</el-ink>
+          <el-ink rel="nofollow" style="float:right" :underline="false" @click="toRegister">注册</el-ink>
+        -->
+        <el-form-item>
+```
+          
+          
   - emoji
   - 上传文件
     - 图片
