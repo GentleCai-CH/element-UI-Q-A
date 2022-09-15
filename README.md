@@ -122,4 +122,42 @@ $ npm generate
 7. 执行 `pm2 start npm --name nebula -- run start`
 
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+在 `config.js` 中写入：
+
+```javascript
+import http from 'http'
+import https from 'https'
+export default {
+  // 自定义的请求头
+  headers: {
+    post: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    'X-Requested-With': 'XMLHttpRequest'
+  },
+  // 超时设置
+  timeout: 10000,
+  // 跨域是否带Token
+  withCredentials: true,
+  // 响应的数据格式 json / blob /document /arraybuffer / text / stream
+  responseType: 'json',
+  // 用于node.js
+  httpAgent: new http.Agent({
+    keepAlive: true
+  }),
+  httpsAgent: new https.Agent({
+    keepAlive: true
+  })
+}
+```
+
+
+
+## UI
+
+
+
+![image-20220310123410770](ui/image-20220310123410770.png)
+
+![image-20220310123530635](ui/image-20220310123530635.png)
