@@ -5,11 +5,11 @@
 
 ## ✨ 特性
 
-###  问题： <el-input>输入框 不能输入、删除等
+###  问题1： el-input输入框 不能输入、删除等
   
-#### 原因1：使用了 <el-link>
+#### 原因1：使用了 el-link
   
- <el-form-item>里面嵌入 <el-link>会导致 input输入框不能输入、删除
+ el-form-item 里面嵌入 el-lin>会导致 input输入框不能输入、删除
    
 ```html
 <el-form :model="user" ref="user" status-icon label-width="150px">
