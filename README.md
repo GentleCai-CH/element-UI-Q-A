@@ -3,13 +3,24 @@
 ## 💡 简介
 用于收集 使用element-UI过程中遇到的问题及解决方法，以提高开发效率。
 
-## ✨ 特性
+
+
+## ✨ 解决思路
+
+###  思路1： 先 百度 查看有没有人之前遇到相似的问题
+
+
+###  思路2： 查看 工具库 官网，对比官网 例子代码，调试项目，找出项目 bug代码 所在
+
+
+
+## ✨ 问题 及 解决
 
 ###  问题1： el-input输入框 不能输入、删除等
   
 #### 原因1：使用了 el-link
   
- el-form-item 里面嵌入 el-lin>会导致 input输入框不能输入、删除
+ el-form-item 里面嵌入 el-lin>会导致 input输入框不能输入、删除，
    
 ```html
 <el-form :model="user" ref="user" status-icon label-width="150px">
