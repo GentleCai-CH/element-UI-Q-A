@@ -10,17 +10,17 @@
 ###  思路1： 先 百度 查看有没有人之前遇到相似的问题
 
 
-###  思路2： 查看 工具库 官网，对比官网 例子代码，调试项目，找出项目 bug代码 所在
+###  思路2： 查看 工具库 官网，对比例子代码，调试项目，找出项目 bug代码 所在
 
 
 
 ## ✨ 问题 及 解决
 
-###  问题1： el-input输入框 不能输入、删除等
+###  问题1： el-form 表单 中的 el-input输入框 不能输入、删除等
   
-#### 原因1：使用了 el-link
+#### 原因1：el-form-item 中 只允许 el-button 的 @click 事件，不允许其他组件的 @click事件出现
   
- el-form-item 里面嵌入 el-lin>会导致 input输入框不能输入、删除，
+
    
 ```html
 <el-form :model="user" ref="user" status-icon label-width="150px">
@@ -29,13 +29,14 @@
         </el-form-item>
      
         </el-form-item>
+        
         <!--
-          
-          <el-form-item>里面嵌入 <el-link>会导致 input输入框不能输入、删除
+          <el-form-item>里面 只允许 el-button 的 @click 事件， 不允许其他组件的 @click事件出现
 
           <el-ink rel="nofollow" style="float:right" :underline="false" @click="forget">忘记密码</el-ink>
           <el-ink rel="nofollow" style="float:right" :underline="false" @click="toRegister">注册</el-ink>
         -->
+        
         <el-form-item>
 ```
           
