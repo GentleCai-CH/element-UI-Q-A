@@ -45,7 +45,7 @@
 
 ###  问题2： el-tree 树形控件 不能 渲染 出数据
   
-#### 原因1：官网规定 el-tree 使用懒加载lazy属性时 需要配合 loading属性（tree树形控件）[https://element.eleme.cn/#/zh-CN/component/tree#tree-shu-xing-kong-jian]
+#### 原因1：官网规定 el-tree 使用懒加载lazy属性时 需要配合 loading属性[tree树形控件 ]（https://element.eleme.cn/#/zh-CN/component/tree#tree-shu-xing-kong-jian）
 
   - emoji
   - 上传文件
